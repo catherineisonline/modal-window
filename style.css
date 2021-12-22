@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@1,300&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family: 'Overpass', sans-serif;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 150, 130, 1) 0%,
+    rgba(206, 163, 204, 1) 41%,
+    rgba(248, 205, 190, 1) 100%
+  );
+}
+/** Show Modal Button **/
+.show-modal {
+  position: relative;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 2rem 2rem;
+  margin-top: 300px;
+  margin-bottom: 50%;
+  width: 100%;
+  border: 1px white solid;
+  background-color: transparent;
+  color: white;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: white;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/** Modal Block **/
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: auto;
+  padding: 3rem;
+  background-color: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 150, 130, 1) 0%,
+    rgba(206, 163, 204, 1) 41%,
+    rgba(248, 205, 190, 1) 100%
+  );
+  border: white 5px solid;
+  border-radius: 10px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  color: white;
+}
+.modal h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 1px 1px black;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.modal p {
+  opacity: 0.9;
+  overflow: hidden;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height: 25px;
+}
+
+.modal-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: auto;
+  padding: 6rem;
+  z-index: 6;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 150, 130, 1) 0%,
+    rgba(206, 163, 204, 1) 41%,
+    rgba(248, 205, 190, 1) 100%
+  );
+  filter: blur(50px);
+  opacity: 0.5;
+  overflow: hidden;
+}
+/** Overlay **/
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(246, 150, 130, 1) 0%,
+    rgba(206, 163, 204, 1) 41%,
+    rgba(248, 205, 190, 1) 100%
+  );
+  filter: blur(50px);
+  z-index: 5;
+}
+
+/** Media Queries **/
+
+@media only screen and (max-width: 1201px) {
+  .modal h1 {
+    font-size: 2rem;
+  }
+  .modal p {
+    font-size: 1rem;
+    line-height: 20px;
+  }
+}
+
+@media only screen and (max-width: 1025px) {
+  .show-modal {
+    margin-top: 200px;
+  }
+  .modal {
+    width: 60%;
+  }
+  .modal h1 {
+    font-size: 1.8rem;
+  }
+  .modal p {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 801px) {
+  .modal {
+    padding: 1rem;
+  }
+
+  .close-modal {
+    top: 0;
+    right: 1rem;
+    font-size: 4.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .modal {
+    width: 80%;
+  }
+}
