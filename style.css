@@ -22,7 +22,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding: 2rem 2rem;
-  margin-top: 300px;
+  margin-top: 200px;
   margin-bottom: 50%;
   width: 100%;
   border: 1px white solid;
@@ -34,9 +34,9 @@ body {
 
 .close-modal {
   position: absolute;
-  top: 1.2rem;
-  right: 2rem;
-  font-size: 5rem;
+  top: 0;
+  right: 0;
+  font-size: 4rem;
   color: white;
   cursor: pointer;
   border: none;
@@ -53,10 +53,9 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
+  width: 80%;
   height: auto;
-  padding: 3rem;
-  background-color: transparent;
+  padding: 1rem;
   background: linear-gradient(
     90deg,
     rgba(246, 150, 130, 1) 0%,
@@ -71,17 +70,16 @@ body {
 }
 .modal h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   text-shadow: 1px 1px black;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 .modal p {
   opacity: 0.9;
-  overflow: hidden;
   font-size: 1rem;
-  letter-spacing: 2px;
-  line-height: 25px;
+  overflow: hidden;
+  line-height: 1.5rem;
 }
 
 .modal-background {
@@ -122,45 +120,45 @@ body {
 
 /** Media Queries **/
 
-@media all and (max-width: 1201px) {
+@media screen and (min-width: 801px) {
+  .close-modal {
+    font-size: 6rem;
+  }
   .modal h1 {
     font-size: 2rem;
   }
   .modal p {
-    font-size: 1rem;
-    line-height: 20px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 2px;
   }
 }
 
-@media all and (max-width: 1025px) {
-  .show-modal {
-    margin-top: 200px;
-  }
-  .modal {
-    width: 60%;
-  }
-  .modal h1 {
-    font-size: 1.8rem;
-  }
-  .modal p {
-    font-size: 1rem;
-  }
-}
-
-@media all and (max-width: 801px) {
-  .modal {
-    padding: 1rem;
-  }
-
-  .close-modal {
-    top: 0;
-    right: 1rem;
-    font-size: 4.5rem;
-  }
-}
-
-@media all and (max-width: 600px) {
+@media screen and (min-width: 1025px) {
   .modal {
     width: 80%;
+  }
+  .close-modal {
+    font-size: 7rem;
+  }
+  .modal h1 {
+    font-size: 3rem;
+  }
+  .modal p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 2px;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  .modal p {
+    line-height: 3rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .close-modal {
+    font-size: 8rem;
   }
 }
