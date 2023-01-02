@@ -1,35 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@1,300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+:root {
+  --background: linear-gradient(
+    90deg,
+    rgba(246, 150, 130, 1) 0%,
+    rgba(206, 163, 204, 1) 41%,
+    rgba(248, 205, 190, 1) 100%
+  );
+  --peach: rgba(246, 150, 130, 1);
+  --body-font: "Overpass", sans-serif;
+  --title-font: "Dancing Script", cursive;
+  --white: rgb(255, 255, 255);
+  --box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
 
 body {
   margin: 0;
   padding: 0;
   font-size: 62.5%;
   box-sizing: border-box;
-  font-family: 'Overpass', sans-serif;
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(
-    90deg,
-    rgba(246, 150, 130, 1) 0%,
-    rgba(206, 163, 204, 1) 41%,
-    rgba(248, 205, 190, 1) 100%
-  );
+  font-family: var(--body-font);
+  background: var(--background);
+  color: var(--white);
 }
-/** Show Modal Button **/
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .show-modal {
   position: relative;
-  font-size: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  padding: 2rem 2rem;
-  margin-top: 200px;
-  margin-bottom: 50%;
-  width: 100%;
-  border: 1px white solid;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  padding: 1.5rem 2rem;
+  border: 1px var(--white) solid;
   background-color: transparent;
-  color: white;
-  border-radius: 10rem;
+  color: var(--white);
+  border-radius: 25px;
   cursor: pointer;
+  font-family: var(--title-font);
 }
 
 .close-modal {
@@ -37,10 +49,12 @@ body {
   top: 0;
   right: 0;
   font-size: 4rem;
-  color: white;
   cursor: pointer;
   border: none;
   background: none;
+  color: var(--white);
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
 }
 
 .hidden {
@@ -54,111 +68,41 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  height: auto;
-  padding: 1rem;
-  background: linear-gradient(
-    90deg,
-    rgba(246, 150, 130, 1) 0%,
-    rgba(206, 163, 204, 1) 41%,
-    rgba(248, 205, 190, 1) 100%
-  );
-  border: white 5px solid;
-  border-radius: 10px;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-  z-index: 10;
-  color: white;
-}
-.modal h1 {
-  text-align: center;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px black;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-.modal p {
-  opacity: 0.9;
-  font-size: 1rem;
-  overflow: hidden;
-  line-height: 1.5rem;
-}
-
-.modal-background {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  height: auto;
-  padding: 6rem;
-  z-index: 6;
-  background: linear-gradient(
-    90deg,
-    rgba(246, 150, 130, 1) 0%,
-    rgba(206, 163, 204, 1) 41%,
-    rgba(248, 205, 190, 1) 100%
-  );
-  filter: blur(50px);
-  opacity: 0.5;
-  overflow: hidden;
-}
-/** Overlay **/
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+  max-width: 45rem;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(246, 150, 130, 1) 0%,
-    rgba(206, 163, 204, 1) 41%,
-    rgba(248, 205, 190, 1) 100%
-  );
-  filter: blur(50px);
-  z-index: 5;
+  max-height: 37rem;
+  padding: 2rem;
+  background: var(--background);
+  border: var(--white) 5px solid;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow);
+  z-index: 10;
+  overflow: scroll;
+}
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-family: var(--title-font);
+}
+p {
+  overflow: scroll;
+  line-height: 2rem;
+  letter-spacing: 1px;
+  padding: 1rem;
+  font-size: 1.5rem;
 }
 
-/** Media Queries **/
-
-@media screen and (min-width: 801px) {
-  .close-modal {
-    font-size: 6rem;
+@media (hover: hover) {
+  .close-modal:hover {
+    -ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+    transition: all ease-in-out 0.3s;
   }
-  .modal h1 {
-    font-size: 2rem;
-  }
-  .modal p {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    letter-spacing: 2px;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .modal {
-    width: 80%;
-  }
-  .close-modal {
-    font-size: 7rem;
-  }
-  .modal h1 {
-    font-size: 3rem;
-  }
-  .modal p {
-    font-size: 1.5rem;
-    line-height: 2rem;
-    letter-spacing: 2px;
-  }
-}
-
-@media screen and (min-width: 1201px) {
-  .modal p {
-    line-height: 3rem;
-  }
-}
-
-@media screen and (min-width: 1440px) {
-  .close-modal {
-    font-size: 8rem;
+  .show-modal:hover {
+    color: var(--peach);
+    background-color: var(--white);
+    transition: all ease-in-out 0.3s;
   }
 }

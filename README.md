@@ -1,4 +1,6 @@
-#Modal window (pop-up) component made with CSS, HTML &amp; JavaScript
+
+
+# Modal window (pop-up) component made with CSS, HTML &amp; JavaScript
 
 ## Project Objective
 A modal, or dialog box, is a message box that appears in the browser after some specified user interactivity.
