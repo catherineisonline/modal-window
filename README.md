@@ -1,4 +1,5 @@
-
+![Modal window](https://github.com/catherineisonline/modal-window/blob/main/images/project-preview-1.png?raw=true)
+![Modal window](https://github.com/catherineisonline/modal-window/blob/main/images/project-preview-2.png?raw=true)
 
 # Modal window (pop-up) component made with CSS, HTML &amp; JavaScript
 
