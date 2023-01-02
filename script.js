@@ -17,11 +17,16 @@ const closeAction = function () {
 //Close Modal with button
 closeModal.addEventListener('click', closeAction);
 
-
+window.addEventListener('click', function (event) {
+  if(event.target.tagName === "MAIN"){
+    closeAction();
+  }
+});
 
 //Close Modal with ESC key
 document.addEventListener('keydown', function (event) {
-  if (event.key === 'Escape') {
+  console.log(event)
+  if (event.key === 'Escape' ) {
     if (!modal.classList.contains('hidden')) {
       closeAction();
     }
